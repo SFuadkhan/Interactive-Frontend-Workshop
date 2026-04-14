@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RPS Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="game-container">
+        <header class="scoreboard">
+            <div class="score-card">
+                <span class="label">PLAYER</span>
+                <span id="player_score">0</span>
+            </div>
+            <div class="score-card">
+                <span class="label">COMPUTER</span>
+                <span id="computer_score">0</span>
+            </div>
+        </header>
+
+        <div class="play-area">
+            <div class="status-display">
+                <div class="display-box">
+                    <p>YOU</p>
+                    <div id="player-view" class="icon-view"><i class="fa-solid fa-question"></i></div>
+                </div>
+                <div class="vs">VS</div>
+                <div class="display-box">
+                    <p>CPU</p>
+                    <div id="cpu-view" class="icon-view"><i class="fa-solid fa-question"></i></div>
+                </div>
+            </div>
+
+            <div id="result-message" class="result-text">Choose your weapon!</div>
+
+            <div class="choices">
+                <button class="choice-btn" data-choice="rock">
+                    <i class="fa-regular fa-hand-back-fist"></i>
+                </button>
+                <button class="choice-btn" data-choice="paper">
+                    <i class="fa-regular fa-hand"></i>
+                </button>
+                <button class="choice-btn" data-choice="scissors">
+                    <i class="fa-regular fa-hand-scissors"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
