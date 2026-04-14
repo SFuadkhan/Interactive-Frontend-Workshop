@@ -1,0 +1,149 @@
+:root {
+    --primary: #6d4c41;
+    --accent: #ffb74d;
+    --bg: #fff3e0;
+}
+/* Add this to your :root or top of file */
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    touch-action: manipulation; /* Removes 300ms click delay on mobile */
+}
+
+/* Updated Game Area for Mobile */
+.game-area {
+    display: flex;
+    flex-direction: column; /* Stack vertically on small screens */
+    align-items: center;
+    gap: 2rem;
+    padding: 10px;
+}
+
+/* Responsive Cookie size */
+#cookie-btn {
+    width: 60vw; /* 60% of viewport width */
+    max-width: 250px;
+    height: auto;
+    -webkit-tap-highlight-color: transparent; /* Removes the blue box on tap */
+}
+
+/* Tablet and Desktop Adjustment */
+@media (min-width: 768px) {
+    .game-area {
+        flex-direction: row; /* Side-by-side on larger screens */
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+    
+    #cookie-btn {
+        width: 250px;
+    }
+}
+
+/* Shop adjustments for small screens */
+.shop {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 2rem;
+}
+
+/* Make buttons easier to hit with thumbs */
+.buy-btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+}
+
+*{
+    /* Prevents text selection */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none;      /* IE 10 and 11 */
+    user-select: none;          /* Standard syntax */
+
+    /* Prevents the "ghost image" when trying to drag */
+    -webkit-user-drag: none;
+    user-drag: none;
+    
+    /* Optional: Changes the cursor to show it's not a text area */
+    cursor: default;
+}
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    color: var(--primary);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.game-container {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.score-board h1 { font-size: 3rem; margin-bottom: 0; }
+
+.game-area {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.cookie-container {
+    position: relative;
+    cursor: pointer;
+}
+
+#cookie-btn {
+    width: 250px;
+    transition: transform 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    behavior: undraggable;
+}
+
+#cookie-btn:active { transform: scale(0.9); }
+
+.shop {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    min-width: 300px;
+}
+
+.upgrade-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.buy-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.buy-btn:hover:not(:disabled) { background: var(--accent); }
+.buy-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Floating Text Animation */
+.floating-text {
+    position: absolute;
+    color: var(--primary);
+    font-weight: bold;
+    animation: floatUp 0.8s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-100px); }
+}

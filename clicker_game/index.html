@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Clicker Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <div class="game-container">
+        <header class="score-board">
+            <h1>Score: <span id="current-score">0</span></h1>
+            <p>per second: <span id="sps-display">0</span></p>
+        </header>
+
+        <main class="game-area">
+            <div class="cookie-container">
+                <img src="./cookie.png" alt="Cookie" id="cookie-btn">
+                <div id="particles-container"></div>
+            </div>
+
+            <section class="shop">
+                <h2>Upgrades</h2>
+                <div class="upgrade-list">
+                    <div class="upgrade-item">
+                        <span>Click Upgrade (+2)</span>
+                        <button class="buy-btn" data-type="click" data-amount="2" data-cost="50">50 pts</button>
+                    </div>
+                    <div class="upgrade-item">
+                        <span>Grandma (+1/s)</span>
+                        <button class="buy-btn" data-type="passive" data-amount="1" data-cost="100">100 pts</button>
+                    </div>
+                    <div class="upgrade-item">
+                        <span>Mega Click (+10)</span>
+                        <button class="buy-btn" data-type="click" data-amount="10" data-cost="200">200 pts</button>
+                    </div>
+                    <div class="upgrade-item">
+                        <span>Factory (+7/s)</span>
+                        <button class="buy-btn" data-type="passive" data-amount="7" data-cost="500">500 pts</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
